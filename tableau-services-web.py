@@ -26,13 +26,13 @@ except IndexError:
     pass
 
 try:
-    r = requests.get(url, verify = verify)
+    r = requests.get(url, verify =verify, timeout=20)
     # special case if server is unresponsive
     if r.status_code != 200:
         print("100")
         exit(1)
     systeminfo = ElementTree.fromstring(r.content)
-except requests.exceptions.ConnectionError:
+except (requests.exceptions.ConnectionError, requests.exceptions.Timeout) as e:
     # special case if server is unresponsive
     print("100")
     exit(1)
