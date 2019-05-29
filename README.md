@@ -4,7 +4,6 @@ Zabbix template for Tableau Server on Linux
 
 ## Requirements:
 Python (tested on Centos 7 with Python 2.7 and 3.7) and Python modules:
-- PyYAML
 - requests
 
 ## Usage
